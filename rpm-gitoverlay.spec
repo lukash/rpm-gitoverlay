@@ -9,16 +9,16 @@ Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
-BuildRequires:  python3-nose
-BuildRequires:  python3-marshmallow
-BuildRequires:  python3-marshmallow-enum
-BuildRequires:  rpm-python3
-BuildRequires:  python3-PyYAML
+#BuildRequires:  python3-nose
+#BuildRequires:  python3-marshmallow
+#BuildRequires:  python3-marshmallow-enum
+#BuildRequires:  rpm-python3
+#BuildRequires:  python3-PyYAML
 BuildRequires:  git-core
-Requires:       python3-marshmallow
-Requires:       python3-marshmallow-enum
-Requires:       rpm-python3
-Requires:       python3-PyYAML
+#Requires:       python3-marshmallow
+#Requires:       python3-marshmallow-enum
+#Requires:       rpm-python3
+#Requires:       python3-PyYAML
 Requires:       git-core
 # Archives are always in tar.xz
 Requires:       /usr/bin/tar
@@ -26,8 +26,8 @@ Requires:       /usr/bin/xz
 # For building SRPMs
 Requires:       /usr/bin/rpmbuild
 # COPR builder
-Requires:       python3-beautifulsoup4
-Requires:       python3-copr
+#Requires:       python3-beautifulsoup4
+#Requires:       python3-copr
 Requires:       python3-requests
 
 BuildArch:      noarch
@@ -44,8 +44,8 @@ BuildArch:      noarch
 %install
 %py3_install
 
-%check
-%{__python3} setup.py test
+#%check
+#%{__python3} setup.py test
 
 %files
 %license COPYING
