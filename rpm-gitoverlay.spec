@@ -7,18 +7,18 @@ License:        GPLv3+
 URL:            https://github.com/ignatenkobrain/%{name}
 Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
 
-BuildRequires:  python3-devel
-BuildRequires:  python3-setuptools
-#BuildRequires:  python3-nose
-#BuildRequires:  python3-marshmallow
-#BuildRequires:  python3-marshmallow-enum
-#BuildRequires:  rpm-python3
-#BuildRequires:  python3-PyYAML
+BuildRequires:  python2-devel
+BuildRequires:  python2-setuptools
+BuildRequires:  python-nose
+BuildRequires:  python-marshmallow
+#BuildRequires:  python-marshmallow-enum
+BuildRequires:  rpm-python
+BuildRequires:  python2-pyyaml
 BuildRequires:  git-core
-#Requires:       python3-marshmallow
-#Requires:       python3-marshmallow-enum
-#Requires:       rpm-python3
-#Requires:       python3-PyYAML
+Requires:       python-marshmallow
+#Requires:       python-marshmallow-enum
+Requires:       rpm-python
+Requires:       python2-pyyaml
 Requires:       git-core
 # Archives are always in tar.xz
 Requires:       /usr/bin/tar
@@ -26,9 +26,9 @@ Requires:       /usr/bin/xz
 # For building SRPMs
 Requires:       /usr/bin/rpmbuild
 # COPR builder
-#Requires:       python3-beautifulsoup4
-#Requires:       python3-copr
-Requires:       python3-requests
+Requires:       python-beautifulsoup4
+Requires:       python2-copr
+Requires:       python-requests
 
 BuildArch:      noarch
 
@@ -39,20 +39,20 @@ BuildArch:      noarch
 %autosetup
 
 %build
-%py3_build
+%py2_build
 
 %install
-%py3_install
+%py2_install
 
-#%check
-#%{__python3} setup.py test
+%check
+%{__python2} setup.py test
 
 %files
 %license COPYING
 %doc README.md
 %{_bindir}/%{name}
-%{python3_sitelib}/rpm_gitoverlay-*.egg-info/
-%{python3_sitelib}/rgo/
+%{python2_sitelib}/rpm_gitoverlay-*.egg-info/
+%{python2_sitelib}/rgo/
 
 %changelog
 * Sun Jul 10 2016 Igor Gnatenko <ignatenko@redhat.com> - 0-1
